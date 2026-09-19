@@ -157,6 +157,7 @@ local function translate_input(msg)
             if x == 0 then key = 105 -- KEY_LEFT
             elseif x == 1 then key = 102 -- KEY_HOME
             elseif x == 2 then key = 106 -- KEY_RIGHT
+            else key = x
             end
             emit(C.EV_KEY, key, 1)
             emit(C.EV_SYN, C.SYN_REPORT, 0)
@@ -165,6 +166,7 @@ local function translate_input(msg)
             if x == 0 then key = 105
             elseif x == 1 then key = 102
             elseif x == 2 then key = 106
+            else key = x
             end
             emit(C.EV_KEY, key, 0)
             emit(C.EV_SYN, C.SYN_REPORT, 0)
